@@ -13,6 +13,20 @@
   }
 }
 
+.bookdetails {
+  margin-left: 50px;
+  width: 500px;
+}
+
+.pageTitle {
+  margin-left: 500px;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  width: 50px;
+  text-align: center;
+  align-self: center;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -26,6 +40,20 @@
 
 .App-link {
   color: #61dafb;
+
+}
+
+.borderRadius{
+  border-radius: 25px;
+}
+
+
+.flowright {
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-start-end-radius: 2px;
 }
 
 @keyframes App-logo-spin {

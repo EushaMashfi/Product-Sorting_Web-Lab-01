@@ -1,11 +1,10 @@
 import "./App.css";
-import products from "./components/product_list";
 import React from "react";
-import Component from "./components/component";
+import Component from "./components/Component";
 
 function App() {
   return (
-    <div>
+    <div className="Application">
       <Component />
     </div>
   );

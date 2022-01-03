@@ -1,52 +1,74 @@
-import products from "../components/product_list";
+import products from "./ProductList";
 import React from "react";
 
-function component() {
+function Component() {
   const [, updateState] = React.useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
 
   function increamentVotes(a) {
-    //console.log(a.votes);
     a.votes = a.votes + 1;
-    console.log(a.votes);
     forceUpdate();
   }
 
   products.sort((a, b) => b.votes - a.votes);
 
   return (
-    <div>
+    <div >
       <body align="center">
-        <div>
-          <font size="7">Popular Products</font>
+
+        <div className="pageTitle">
+          <font size="15"><b>Popular Products</b></font>
         </div>
-        <div>
-          {products.map((p, i) => (
-            <div>
-              <p>
-                <button onClick={increamentVotes.bind(this, p)}>
-                  <font size="5">{p.votes}</font>
-                </button>
-              </p>
-              <br></br>
-              <img src={p.productImageUrl} width="350" height="500"></img>,
-              <p>
-                <font size="12">{p.title}</font>
-              </p>
-              <p>
-                <font size="5">{p.description}</font>
-              </p>
-              <p>
-                <font size="4">
-                  {" "}
-                  Submitted By:{" "}
-                  <img src={p.submitterAvatarUrl} width="50" height="50"></img>
-                </font>
-              </p>
-              <p>
-                <hr></hr>
-              </p>
-            </div>
+
+        <div >
+          {products.map((eachProduct) => (
+
+            <div className="flowright" >
+
+
+
+                <div>
+                  <img src={eachProduct.productImageUrl} width="400" height="600" className="borderRadius"></img>,
+                </div>
+              
+                <div className="bookdetails" align="left">
+
+                  <p>
+                    <b><font size="7">{eachProduct.title}</font></b>
+                  </p>
+
+
+                  <p>
+                    <font size="6">{eachProduct.description}</font>
+                  </p>
+
+
+                  <br/>
+
+                  <p>
+                    <font size="5">
+                      Submitted By:{" "}
+                      <img src={eachProduct.submitterAvatarUrl}  height="40"></img>
+                    </font>
+                  </p>
+
+           
+
+                  <p>
+                    <font size="5">
+                      Vote Count:{"  "}
+                    </font>
+
+                    <button onClick={increamentVotes.bind(this, eachProduct)}>
+                      <font size="5">{eachProduct.votes}</font>
+                    </button>
+                  </p>
+      
+                </div>
+              </div>
+              
+              
+              
           ))}
         </div>
       </body>
@@ -54,4 +76,4 @@ function component() {
   );
 }
 
-export default component;
+export default Component;
